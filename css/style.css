@@ -1,5 +1,5 @@
 body {
-	font-family: "Quicksand";
+	font-family: "Quicksand", "sans-serif";
 	background-image: url("../images/pidgeon-background.jpg");
 	background-repeat: no-repeat;
 	background-color: #dddddd;
@@ -23,22 +23,26 @@ a {
 	font-style: italic;
 }
 
-a : focus {
+a:focus {
 	border: 1px solid red;
 }
 
 table {
-	border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0;
 }
-
 
 .colhead {
 	min-width: 150px;
 	padding: 10px;
 	color: white;
 	text-align: center;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	background-color: darkred;
+}
+
+tbody > tr > th, tbody > tr > td {
+	border-top: 2px solid black;
 }
 
 tr:nth-child(even) {
@@ -53,20 +57,68 @@ tr:hover {
 	background-color: #fab9cf;
 }
 
-td {
+tbody > tr, td {
 	text-align: center;
 	padding: 15px;
 	border: none;
 }
 
-tr:first-child td {
-	border-radius: 10px;
+thead > tr > th:first-child, td:first-child {
+	border-radius: 10px 0 0 0;
 }
 
+thead > tr> th:last-child {
+	border-radius: 0 10px 0 0;
+}
+
+tbody > tr:last-child > th:first-child {
+	border-radius: 0 0 0 10px;
+}
+
+tbody > tr:last-child > td:last-child {
+	border-radius: 0 0 10px 0;
+}
+
+thead > tr > th {
+	border-top: 2px solid black;
+}
+
+thead > tr > th:first-child, tbody > tr > th {
+	border-left: 2px solid black;
+}
+
+thead > tr > th:last-child, tbody > tr > td:last-child  {
+	border-right: 2px solid black;
+}
+
+tbody > tr:last-child > td, tbody > tr:last-child > th {
+	border-bottom: 2px solid black;
+}
+
+/*tbody > tr:last-child > td {
+	border-bottom: 2px solid black;
+}*/
+
+/*th:first-child  {
+	border-left: 2px solid black;
+}
+
+tbody > tr > td:last-child  {
+	border-right: 2px solid black;
+}*/
+
+main {
+	margin-bottom: 60px;
+}
 
 footer {
 	background-color: black;
 	min-height: 60px;
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 footer > p {
